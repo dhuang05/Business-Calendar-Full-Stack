@@ -1,0 +1,17 @@
+<div class="">
+  <div class="header-title"><span>Business Calendar Administration</span></div>
+  <div class="error">
+    <p>{{message}}</p>
+  </div>
+  <div class="input">
+    <input autofocus class="input"  name="userName" type="text"  [(ngModel)]="loginForm.userId" placeholder="user id" />
+  </div>
+  <div class="input">
+    <input class="input"  name="password" type="password" [(ngModel)]="loginForm.password"  placeholder="password" />
+  </div>
+  <div class="input">
+    <button class="button" type="submit" (click)="login()">Login</button>
+  </div>
+  <div>&nbsp;</div>
+  <div class="input"><a href="#" (click) = "goToRegistration()">New user register here</a></div>
+</div>

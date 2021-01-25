@@ -1,0 +1,207 @@
+<div class="outmost">
+  <cal-admin-header [currentPageName] = "'CAL_ADMIN'"></cal-admin-header>
+  <table style="width:100%; ">
+    <tr>
+      <td style="vertical-align:top; width:260px; overflow-y: scroll;">
+        <div style="vertical-align: top;">
+          <span class="header3"> Calendar Instanace List </span>
+          <div class="list-item">
+            <button class="no-border-button" href="#" (click)="newCalendarInstance($event)" style="width:240px;text-align:left;" ><mat-icon style="font-size: 18px;">add_circle_outline</mat-icon>Create new calendar</button>
+          </div>
+          <input (change)="isChanged()" style= "width: 240px;" name="cal_filter" type="text" [(ngModel)]="calFilter" placeholder = "filter, multiple key words"/>
+          <div class="list-item"  [style] = "'height:' + (screenHeight - 20) + 'px;'">
+            <ng-container *ngFor="let businessCalendarOwnership of businessCalendarOwnerships; index as i">
+              <div *ngIf= "doFilter(businessCalendarOwnership.description)" >
+                <button  class="no-border-button" href="#" style="width:230px; text-align:left;"
+                (click)="fetchCalendarInstance(businessCalendarOwnership)"><mat-icon style="font-size: 18px;">date_range</mat-icon>{{businessCalendarOwnership.description}}</button>
+              </div> 
+            </ng-container>
+          </div>
+        </div>
+      </td>
+      <td style="vertical-align: top;">
+        <div *ngIf="selectedCalendarInst" style="padding:4px; width:100%; border: 1px solid rgb(33, 58, 33)">
+
+          <mat-accordion class="example-headers-align">
+            <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <span style="font-size:18px; font-weight:700; color:darkgreen">Calendar Configure Pane</span>
+                </mat-panel-title>
+                <mat-panel-description>
+                  <span style="font-size:16px; font-weight:700; color:darkgreen">Editing working hour and holiday</span>
+                  <mat-icon>build</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <ng-container *ngTemplateOutlet="calendarInst"> </ng-container>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <span style="font-size:18px; font-weight:700;color:darkgreen">Calendar Test Pane</span>
+                </mat-panel-title>
+                <mat-panel-description>
+                  <span style="font-size:16px; font-weight:700; color:darkgreen">Test and Save Calendar Intsance</span>
+                  <mat-icon>date_range</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <ng-container *ngTemplateOutlet="calendarTester"> </ng-container>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+
+<!--calendar instance template -->
+<ng-template #calendarInst>
+  <div style="border: solid 1px rgb(240, 240, 240);"></div>
+  <div class="div-center">
+    <h2>
+    <mat-icon>date_range</mat-icon>
+    <span  *ngIf="selectedBusinessCalendarOwnership?.description">
+      {{selectedBusinessCalendarOwnership?.description}}
+    </span>
+    <span  *ngIf="!selectedBusinessCalendarOwnership?.description">
+      New Calendar
+    </span>
+    </h2>
+</div>  
+  <div>
+    <span class="error">{{message}}</span>
+  </div>
+  <div class="flow-layout" *ngIf= "selectedCalendarInst">
+    <div class="div-left">
+      <div *ngIf = "selectedBusinessCalendarOwnership">
+        <mat-label>Status: &nbsp;&nbsp;</mat-label>
+        <mat-radio-group (click) = "isChanged()"  [(ngModel)]="selectedBusinessCalendarOwnership.status" aria-label="Calendar Status">
+          <mat-radio-button value="ACTIVE">active</mat-radio-button>
+          &nbsp;&nbsp;
+          <mat-radio-button value="PENDING">pending</mat-radio-button>
+        </mat-radio-group>
+        <div>&nbsp;</div>
+      </div>
+      <mat-form-field *ngIf="isUserHasSuperRole" appearance="legacy">
+        <mat-label>Calendar ID</mat-label>
+        <input matInput (change)="isChanged()" class="input" name="cal_id" type="text"
+          [(ngModel)]="selectedCalendarInst.calId" />
+      </mat-form-field>
+      <span>&nbsp;&nbsp;&nbsp;</span>
+      <mat-form-field appearance="legacy" style = "width: 250px">
+        <mat-label>Calendar Name</mat-label>
+        <input matInput (change)="isChanged()" class="input" name="cal_name" type="text"
+          [(ngModel)]="selectedCalendarInst.desc" />
+      </mat-form-field>
+      <span>&nbsp;&nbsp;&nbsp;</span>
+      <mat-form-field appearance="legacy">
+        <mat-label>Timezone</mat-label>
+        <mat-select (valueChange)="isChanged()" [(ngModel)]="selectedCalendarInst.timeZone">
+          <mat-option><span style="color:red">please select</span></mat-option>
+          <mat-option *ngFor="let timezone of timezones" [value]="timezone">{{timezone}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="div-center" style="width: 250px;">
+      <div>
+        <span style="font-size: 14px; color:rgb(15, 29, 44)">
+          <span>&nbsp;&nbsp;&nbsp;</span>
+         <button class="b-link" href="#" (click)="setStep(1); testAndSaveCalednar(false);" [style] = "isContentChanged? 'color:red' : 'color:black;'"> Go to test and saving pane</button>
+         <span>&nbsp;&nbsp;&nbsp;</span>
+      </span>
+      </div>
+  </div>
+  </div>
+
+  <div style="width:100%;">
+    <div>
+      <span class="header3">Weekly Working Hour</span>
+    </div>
+    <div class="flow-layout">
+      <div class="weekly-workinghour-block" *ngFor="let businessHour of selectedWeeklyBusinessHours">
+        <cal-weekly-workinghour [businessHour]="businessHour" (changedEvent)="isChanged()">
+        </cal-weekly-workinghour>
+      </div>
+    </div>
+
+  </div>
+  <div>
+    <span class="header3">Special Working Hour</span>
+    <div class="flow-layout" *ngFor="let specialBusinessHours of specialBusinessHourChunks; let i = index;">
+      <div class="special-workinghour-block" *ngFor="let businessHour of specialBusinessHours; let j = index;"
+        style="vertical-align: top;">
+        <cal-special-workinghour [businessHour]="businessHour" (changedEvent)="isChanged()"
+          (deleteEvent)="deleteSpecialBusinessHour($event)"></cal-special-workinghour>
+      </div>
+      <div *ngIf="i == (specialBusinessHourChunks.length - 1)">
+        <a href="#" (click)="addSpecialBusinessHour()">
+          <mat-icon style="font-size:14px; color: rgb(49, 218, 181);">add</mat-icon>
+        </a>
+      </div>
+    </div>
+    <div *ngIf="!specialBusinessHourChunks || specialBusinessHourChunks.length == 0">
+      <a href="#" (click)="addSpecialBusinessHour()">
+        <mat-icon style="font-size:14px; color: rgb(49, 218, 181);">add</mat-icon>
+      </a>
+    </div>
+  </div>
+  <div>
+    <span class="header3">Holiday Rules</span>
+    <div class="flow-layout" *ngFor="let holidayRules of holidayChunks; let i = index;">
+      <div class="holiday-rule-block" *ngFor="let holidayRule of holidayRules; let j = index;"
+        style="vertical-align: top;">
+        <cal-holiday-definition [holidayRule]="holidayRule" (deleteEvent)="deleteHolidayRule($event)"
+          (changedEvent)="isChanged()">
+        </cal-holiday-definition>
+      </div>
+      <div *ngIf="i == (holidayChunks.length - 1)">
+        <a href="#" (click)="addHolidayRule()">
+          <mat-icon style="font-size:14px; color: rgb(49, 218, 181);">add</mat-icon>
+        </a>
+      </div>
+    </div>
+    <div *ngIf="!holidayChunks || holidayChunks.length == 0">
+      <a href="#" (click)="addHolidayRule()">
+        <mat-icon style="font-size:14px; color: rgb(49, 218, 181);">add</mat-icon>
+      </a>
+    </div>
+  </div>
+</ng-template>
+
+
+<!--- Calendar rule tester  -->
+
+<ng-template #calendarTester>
+  <div style="border: solid 1px rgb(240, 240, 240);"></div>
+  <div>
+    <span class="error">{{message}}</span>
+  </div>
+  <div *ngIf="selectedCalendarInst">
+    <div class = "div-left" ></div>
+    <div class = "div-center, header3"><mat-icon>date_range</mat-icon><span>{{selectedCalendarInst.desc}}</span></div>
+    <div class = "div-right">
+      <button class="no-border-button" href="#" (click) = "setStep(0)">Back to Configure</button>
+      &nbsp; &nbsp;
+      <button class="no-border-button" href="#" (click) = "testAndSaveCalednar(false)"> View Calendar</button>
+      &nbsp; &nbsp;
+      <button *ngIf="isContentChanged" class="no-border-button" style="color: red;" href="#" (click) = "testAndSaveCalednar(true)">Save Calendar Rules</button>
+      <span *ngIf="!isContentChanged">Content not changed yet</span>
+      &nbsp; &nbsp;
+    </div>
+   
+  </div>
+
+  <div *ngIf="testResult" class= "header-title">
+    <diV><span>&nbsp;</span></diV>
+    <div class="flow-layout" >
+      <div class="div-left">&nbsp;&nbsp;<button class="no-border-button" style = "font-size: 38px;" href="#" (click)="moveToPreviousYear()">&laquo;</button></div>
+      <div class="div-center"><span style = "font-size: 28px;" class="alink">{{testResult.year}}</span></div>
+      <div class="div-right"><button class="no-border-button " style = "font-size: 38px;" href="#" (click)="moveToNextYear()">&raquo;</button>&nbsp;&nbsp;</div>
+    </div>
+    <diV><span>&nbsp;</span></diV>
+    <cal-calendar-view  [testResult] = "testResult"></cal-calendar-view>
+  </div>
+</ng-template>

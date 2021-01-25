@@ -1,0 +1,37 @@
+<div *ngIf="month" style="background:white;">
+    <div>&nbsp;</div>
+    <div>
+        <div class="flow-layout" >
+        <div class="div-left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="b-link" style = "font-size: 38px;" href="#" (click)="moveToPreviuosMonth()">&lsaquo;</a></div>
+        <div class="div-center">
+            <span class="month-name" style = "font-size: 28px; color:black;" class="b-link">
+            </span>
+            <select [(ngModel)]="currentMonth" (change)="goToMonth()" class="month-name">
+                <option *ngFor="let item of monthMap | keyvalue" [value]="item.key" style="font-size: 14px;" >{{item.value}}</option>
+              </select>
+       </div>
+        <div class="div-right"><a class="b-link" style = "font-size: 38px;" href="#" (click)="moveToNextMonth()">&rsaquo;</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        </div>
+    </div>
+    <div>&nbsp;</div>
+    <div>
+        <mat-grid-list cols="7" rowHeight="2:1">
+            <mat-grid-tile class="mat-grid-tile-dow" *ngFor="let dayOfWeek of dayOfWeeks">{{dayOfWeek}}</mat-grid-tile>
+            <mat-grid-tile *ngFor="let day of month.days">
+                <div [className] = "styleClass(day)">
+                    <div class = "div-left">
+                        <span class="day-number" style="padding: 5px;" >{{day.dayNum}}</span>
+                    </div>
+                    <div class = "div-center"  *ngIf="day.isWorkingDay" >
+                        <span class="working-time"><span>{{day.from}}</span>
+                        <span> - </span>
+                        <span class="working-time">{{day.to}}</span></span>
+                    </div>
+                 <div class = "div-center">
+                    <span class="holiday-name">{{day.holidayName}}</span>
+                 </div>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>

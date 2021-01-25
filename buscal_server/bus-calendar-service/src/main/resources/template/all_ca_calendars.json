@@ -1,0 +1,3631 @@
+[
+  {
+    "calId": "PUBLIC@ON_CA",
+    "desc": "PUBLIC in Ontario, Canada",
+    "timeZone": "Canada/Eastern",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "GOVERNMENT@ON_CA",
+    "desc": "GOVERNMENT in Ontario, Canada",
+    "timeZone": "Canada/Eastern",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Easter Monday",
+        "expr": "3-23,5-1;GOODFRIDAY(3)"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "BANK@ON_CA",
+    "desc": "BANK in Ontario, Canada",
+    "timeZone": "Canada/Eastern",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "PUBLIC@BC_CA",
+    "desc": "PUBLIC in British Columbia, Canada",
+    "timeZone": "Canada/Pacific",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "GOVERNMENT@BC_CA",
+    "desc": "GOVERNMENT in British Columbia, Canada",
+    "timeZone": "Canada/Pacific",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Easter Monday",
+        "expr": "3-23,5-1;GOODFRIDAY(3)"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "BANK@BC_CA",
+    "desc": "BANK in British Columbia, Canada",
+    "timeZone": "Canada/Pacific",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "PUBLIC@AB_CA",
+    "desc": "PUBLIC in Alberta, Canada",
+    "timeZone": "Canada/Mountain",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "GOVERNMENT@AB_CA",
+    "desc": "GOVERNMENT in Alberta, Canada",
+    "timeZone": "Canada/Mountain",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Easter Monday",
+        "expr": "3-23,5-1;GOODFRIDAY(3)"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "BANK@AB_CA",
+    "desc": "BANK in Alberta, Canada",
+    "timeZone": "Canada/Mountain",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "PUBLIC@SK_CA",
+    "desc": "PUBLIC in Saskatchewan, Canada",
+    "timeZone": "Canada/Saskatchewan",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "GOVERNMENT@SK_CA",
+    "desc": "GOVERNMENT in Saskatchewan, Canada",
+    "timeZone": "Canada/Saskatchewan",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Easter Monday",
+        "expr": "3-23,5-1;GOODFRIDAY(3)"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "BANK@SK_CA",
+    "desc": "BANK in Saskatchewan, Canada",
+    "timeZone": "Canada/Saskatchewan",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "PUBLIC@MB_CA",
+    "desc": "PUBLIC in Manitoba, Canada",
+    "timeZone": "Canada/Central",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "GOVERNMENT@MB_CA",
+    "desc": "GOVERNMENT in Manitoba, Canada",
+    "timeZone": "Canada/Central",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Easter Monday",
+        "expr": "3-23,5-1;GOODFRIDAY(3)"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "BANK@MB_CA",
+    "desc": "BANK in Manitoba, Canada",
+    "timeZone": "Canada/Central",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "PUBLIC@NB_CA",
+    "desc": "PUBLIC in New Brunswick, Canada",
+    "timeZone": "Canada/Atlantic",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "GOVERNMENT@NB_CA",
+    "desc": "GOVERNMENT in New Brunswick, Canada",
+    "timeZone": "Canada/Atlantic",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Easter Monday",
+        "expr": "3-23,5-1;GOODFRIDAY(3)"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "BANK@NB_CA",
+    "desc": "BANK in New Brunswick, Canada",
+    "timeZone": "Canada/Atlantic",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "PUBLIC@NS_CA",
+    "desc": "PUBLIC in Nova Scotia, Canada",
+    "timeZone": "Canada/Atlantic",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "GOVERNMENT@NS_CA",
+    "desc": "GOVERNMENT in Nova Scotia, Canada",
+    "timeZone": "Canada/Atlantic",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "BANK@NS_CA",
+    "desc": "BANK in Nova Scotia, Canada",
+    "timeZone": "Canada/Atlantic",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "PUBLIC@NL_CA",
+    "desc": "PUBLIC in Newfoundland and Labrador, Canada",
+    "timeZone": "Canada/Newfoundland",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "St. Patrick’s Day",
+        "expr": "3-13,3-28;W3E1M3"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "St. George’s Day",
+        "expr": "4-13,4-28;W3E1M4"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Discovery Day",
+        "expr": "6-22,6-28;W4E1M6"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Orangeman’s Day",
+        "expr": "7-7,7-14;W2E1M7"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "GOVERNMENT@NL_CA",
+    "desc": "GOVERNMENT in Newfoundland and Labrador, Canada",
+    "timeZone": "Canada/Newfoundland",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "St. Patrick’s Day",
+        "expr": "3-13,3-28;W3E1M3"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Easter Monday",
+        "expr": "3-23,5-1;GOODFRIDAY(3)"
+      },
+      {
+        "desc": "St. George’s Day",
+        "expr": "4-13,4-28;W3E1M4"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Discovery Day",
+        "expr": "6-22,6-28;W4E1M6"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Orangeman’s Day",
+        "expr": "7-7,7-14;W2E1M7"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "BANK@NL_CA",
+    "desc": "BANK in Newfoundland and Labrador, Canada",
+    "timeZone": "Canada/Newfoundland",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "St. Patrick’s Day",
+        "expr": "3-13,3-28;W3E1M3"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "St. George’s Day",
+        "expr": "4-13,4-28;W3E1M4"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Discovery Day",
+        "expr": "6-22,6-28;W4E1M6"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Orangeman’s Day",
+        "expr": "7-7,7-14;W2E1M7"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "PUBLIC@PE_CA",
+    "desc": "PUBLIC in Prince Edward Island, Canada",
+    "timeZone": "Canada/Atlantic",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Easter Monday",
+        "expr": "3-23,5-1;GOODFRIDAY(3)"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "GOVERNMENT@PE_CA",
+    "desc": "GOVERNMENT in Prince Edward Island, Canada",
+    "timeZone": "Canada/Atlantic",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Easter Monday",
+        "expr": "3-23,5-1;GOODFRIDAY(3)"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "BANK@PE_CA",
+    "desc": "BANK in Prince Edward Island, Canada",
+    "timeZone": "Canada/Atlantic",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Family Day",
+        "expr": "2-12,2-28;W3E1M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "PUBLIC@QC_CA",
+    "desc": "PUBLIC in Quebec, Canada",
+    "timeZone": "Canada/Eastern",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Quebec Day",
+        "expr": "6-21,6-25; (M6D24 & !(E6 | E7)) || (M6D24(1, 2) & E1)"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "GOVERNMENT@QC_CA",
+    "desc": "GOVERNMENT in Quebec, Canada",
+    "timeZone": "Canada/Eastern",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Jan 2nd",
+        "expr": "1-2,1-4;(M1D2&&!E6&&!E7)||(M1D2(1,2)&&E1)"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Easter Monday",
+        "expr": "3-23,5-1;GOODFRIDAY(3)"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Quebec Day",
+        "expr": "6-21,6-25; (M6D24 & !(E6 | E7)) || (M6D24(1, 2) & E1)"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Christmas EVE",
+        "expr": "12-22,12-24;(M12D24&&!E6&!E7) | (M12D24(-1,-2) && E5)"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      },
+      {
+        "desc": "New Year Eve",
+        "expr": "12-28,12-31;(M12D31&&!E6&&!E7)||(M12D31(-1,-2)&&E5)"
+      }
+    ]
+  },
+  {
+    "calId": "BANK@QC_CA",
+    "desc": "BANK in Quebec, Canada",
+    "timeZone": "Canada/Eastern",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Jan 2nd",
+        "expr": "1-2,1-4;(M1D2&&!E6&&!E7)||(M1D2(1,2)&&E1)"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Quebec Day",
+        "expr": "6-21,6-25; (M6D24 & !(E6 | E7)) || (M6D24(1, 2) & E1)"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "PUBLIC@YT_CA",
+    "desc": "PUBLIC in Yukon, Canada",
+    "timeZone": "Canada/Yukon",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "National Indigenous",
+        "expr": "6-21,6-25; (M6D21 & !(E6 | E7)) || (M6D21(1, 2) & E1)"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Discovery Day",
+        "expr": "8-13,8-28;W3E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "GOVERNMENT@YT_CA",
+    "desc": "GOVERNMENT in Yukon, Canada",
+    "timeZone": "Canada/Yukon",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "National Indigenous",
+        "expr": "6-21,6-25; (M6D21 & !(E6 | E7)) || (M6D21(1, 2) & E1)"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Discovery Day",
+        "expr": "8-13,8-28;W3E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "BANK@YT_CA",
+    "desc": "BANK in Yukon, Canada",
+    "timeZone": "Canada/Yukon",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Heritage Day ",
+        "expr": "2-21,2-28;W4E5M2"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "National Indigenous",
+        "expr": "6-21,6-25; (M6D21 & !(E6 | E7)) || (M6D21(1, 2) & E1)"
+      },
+      {
+        "desc": "Discovery Day",
+        "expr": "6-22,6-28;W4E1M6"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Discovery Day",
+        "expr": "8-13,8-28;W3E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "PUBLIC@NT_CA",
+    "desc": "PUBLIC in Northwest Territories, Canada",
+    "timeZone": "Canada/Atlantic",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Easter Monday",
+        "expr": "3-23,5-1;GOODFRIDAY(3)"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "National Indigenous",
+        "expr": "6-21,6-25; (M6D21 & !(E6 | E7)) || (M6D21(1, 2) & E1)"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "GOVERNMENT@NT_CA",
+    "desc": "GOVERNMENT in Northwest Territories, Canada",
+    "timeZone": "Canada/Atlantic",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Easter Monday",
+        "expr": "3-23,5-1;GOODFRIDAY(3)"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "National Indigenous",
+        "expr": "6-21,6-25; (M6D21 & !(E6 | E7)) || (M6D21(1, 2) & E1)"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "BANK@NT_CA",
+    "desc": "BANK in Northwest Territories, Canada",
+    "timeZone": "Canada/Atlantic",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "National Indigenous",
+        "expr": "6-21,6-25; (M6D21 & !(E6 | E7)) || (M6D21(1, 2) & E1)"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "PUBLIC@NU_CA",
+    "desc": "PUBLIC in Nunavut, Canada",
+    "timeZone": "Canada/Central",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Easter Monday",
+        "expr": "3-23,5-1;GOODFRIDAY(3)"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Nunavut Day",
+        "expr": "7-6,7-20; (M7D9 & !(E6 | E7)) || (M7D9(1, 2) & E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "GOVERNMENT@NU_CA",
+    "desc": "GOVERNMENT in Nunavut, Canada",
+    "timeZone": "Canada/Central",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Easter Monday",
+        "expr": "3-23,5-1;GOODFRIDAY(3)"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Nunavut Day",
+        "expr": "7-6,7-20; (M7D9 & !(E6 | E7)) || (M7D9(1, 2) & E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  },
+  {
+    "calId": "BANK@NU_CA",
+    "desc": "BANK in Nunavut, Canada",
+    "timeZone": "Canada/Central",
+    "businessHours": [
+      {
+        "dayExpr": "E1",
+        "desc": "Monday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E2",
+        "desc": "Tuesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E3",
+        "desc": "Wednesday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E4",
+        "desc": "Thursday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "E5",
+        "desc": "Friday",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "17:00",
+        "overriding": false
+      },
+      {
+        "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+        "desc": "Christmas eve",
+        "businessHourFrom": "09:00",
+        "businessHourTo": "15:00",
+        "overriding": true
+      }
+    ],
+    "holidayRules": [
+      {
+        "desc": "New Year",
+        "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Good Friday",
+        "expr": "3-20,4-28;GOODFRIDAY"
+      },
+      {
+        "desc": "Easter Monday",
+        "expr": "3-23,5-1;GOODFRIDAY(3)"
+      },
+      {
+        "desc": "Victoria day",
+        "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+      },
+      {
+        "desc": "Canada day",
+        "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+      },
+      {
+        "desc": "Nunavut Day",
+        "expr": "7-6,7-20; (M7D9 & !(E6 | E7)) || (M7D9(1, 2) & E1)"
+      },
+      {
+        "desc": "Civic day",
+        "expr": "8-1,8-7;W1E1M8"
+      },
+      {
+        "desc": "Labour day",
+        "expr": "9-1,9-14;W1E1M9"
+      },
+      {
+        "desc": "Thanksgiving",
+        "expr": "10-7,10-18;W2E1M10"
+      },
+      {
+        "desc": "Memorance day",
+        "expr": "11-11,11-11; M11D11"
+      },
+      {
+        "desc": "Christmas Holidays",
+        "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+      }
+    ]
+  }
+]

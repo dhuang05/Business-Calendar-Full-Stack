@@ -1,0 +1,108 @@
+<div class="outmost">
+  <div class="header-title"><span>Business Calendar Administration Registration</span></div>
+  <div class="div-center"><span class="error">{{message}}</span></div>
+  <div>
+    <div style="border: solid 1px rgb(240, 240, 240);"></div>
+    <div class="flow-layout">
+      <div>
+        <mat-grid-list cols="3" rowHeight="60px">
+          <mat-grid-tile >
+            <mat-form-field style = "width:250px;">
+              <mat-label><span [class]="isEmpty(user.userId) ?  'required' : 'filled'">User Name (or Email) </span>
+              </mat-label>
+              <input matInput type="text" (change)="userIdValidate()" [(ngModel)]="user.userId">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field style = "width:250px;">
+              <mat-label><span [class]="isEmpty(user.password) ?  'required' : 'filled'"> Password </span>
+              </mat-label>
+              <input matInput type="password" [(ngModel)]="user.password">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile >
+            <mat-form-field style = "width:250px;">
+              <mat-label><span [class]="isEmpty(retypePassword) ?  'required' : 'filled'">Retype Password </span>
+              </mat-label>
+              <input matInput type="password" [(ngModel)]="retypePassword">
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile >
+            <mat-form-field style = "width:250px;">
+                <mat-label>Title</mat-label>
+                <input matInput type="text" [(ngModel)]="user.person.title">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile >
+            <mat-form-field style = "width:250px;">
+                <mat-label>Solute</mat-label>
+                <input matInput type="text" [(ngModel)]="user.person.solute">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile >
+          <mat-form-field style = "width:250px;">
+              <mat-label><span [class] = "isEmpty(user.person.position)?  'required' : 'filled'">Role/Position</span></mat-label>
+              <input matInput type="text" [(ngModel)]="user.person.position">
+          </mat-form-field>
+      </mat-grid-tile>
+
+        <mat-grid-tile >
+            <mat-form-field style = "width:250px;" >
+                <mat-label><span [class] = "isEmpty(user.person.firstName)?  'required' : 'filled'"> First Name </span></mat-label>
+                <input matInput type="text" [(ngModel)]="user.person.firstName">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field  style = "width:250px;">
+                <mat-label><span [class] = "isEmpty(user.person.lastName)?  'required' : 'filled'"> Last Name </span></mat-label>
+                <input matInput type="text" [(ngModel)]="user.person.lastName">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field  style = "width:250px;">
+                <mat-label><span [class] = "isEmpty(user.person.contact.email)?  'required' : 'filled'">Email  </span></mat-label>
+                <input matInput type="email" [(ngModel)]="user.person.contact.email">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field  style = "width:250px;">
+                <mat-label>Mailing Address </mat-label>
+                <input matInput type="text" [(ngModel)]="user.person.contact.mailingAddress">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field  style = "width:250px;">
+                <mat-label>Primary Phone </mat-label>
+                <input matInput type="text" [(ngModel)]="user.person.contact.primaryPhone">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field  style = "width:250px;">
+                <mat-label>Secondary Phone </mat-label>
+                <input matInput type="text" [(ngModel)]="user.person.contact.secondaryPhone">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field  style="width:250px;">
+            <mat-label><span [class]="isEmpty(organization.orgName) ?  'required' : 'filled'">Organization Name</span>
+            </mat-label>
+            <input matInput type="text" [(ngModel)]="organization.orgName">
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field  style="width:250px;">
+            <mat-label><span [class]="isEmpty(organization.address) ?  'required' : 'filled'">Organization
+                Address</span></mat-label>
+            <input matInput type="text" [(ngModel)]="organization.address">
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+      </div>
+    </div>
+  </div>
+  <div class="input">
+    <button class="button" type="submit" (click)="register()">Register</button>
+  </div>
+
+  <div class="input"><a href="#" (click) = "goToLogin()">Existing user login </a></div>
+</div>

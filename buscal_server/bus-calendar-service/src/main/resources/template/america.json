@@ -1,0 +1,84 @@
+{
+  "businessHours": [
+    {
+      "desc": "Monday",
+      "dayExpr": "E1",
+      "businessHourFrom": "09:00",
+      "businessHourTo": "17:00",
+      "overriding": false
+    },
+    {
+      "desc": "Tuesday",
+      "dayExpr": "E2",
+      "businessHourFrom": "09:00",
+      "businessHourTo": "17:00",
+      "overriding": false
+    },
+    {
+      "desc": "Wednesday",
+      "dayExpr": "E3",
+      "businessHourFrom": "09:00",
+      "businessHourTo": "17:00",
+      "overriding": false
+    },
+    {
+      "desc": "Thursday",
+      "dayExpr": "E4",
+      "businessHourFrom": "09:00",
+      "businessHourTo": "17:00",
+      "overriding": false
+    },
+    {
+      "desc": "Friday",
+      "dayExpr": "E5",
+      "businessHourFrom": "09:00",
+      "businessHourTo": "17:00",
+      "overriding": false
+    },
+    {
+      "desc": "Christmas eve",
+      "dayExpr": "12-24,12-24;M12D24&&!E6&&!E7",
+      "businessHourFrom": "09:00",
+      "businessHourTo": "15:00",
+      "overriding": true
+    }
+  ],
+  "holidayRules": [
+    {
+      "desc": "new year",
+      "expr": "1-1,1-3;(M1D1&&!E6&&!E7)||(M1D1(1,2)&&E1)"
+    },
+    {
+      "desc": "good friday",
+      "expr": "3-20,4-28;GOODFRIDAY"
+    },
+    {
+      "desc": "victoria day",
+      "expr": "5-18,5-24;MM5D24(0,-1,-2,-3,-4,-5,-6)&&E1"
+    },
+    {
+      "desc": "canada day",
+      "expr": "7-1,7-3;(M7D1&&!E6&&!E7)||(M7D1(1,2)&&E1)"
+    },
+    {
+      "desc": "civic day",
+      "expr": "8-1,8-7;W1E1M8"
+    },
+    {
+      "desc": "labour day",
+      "expr": "9-1,9-7; W1E1M9"
+    },
+    {
+      "desc": "thanksgiving",
+      "expr": "10-7,10-18;W2E1M10"
+    },
+    {
+      "desc": "memorance day",
+      "expr": "11-11,11-11; M11D11"
+    },
+    {
+      "desc": "Christmas/Boxingday",
+      "expr": "12-25,12-28;(M12D25&&!E6&!E7)||(M12d26&&!E6&&!E7)||M12D26E6(2)||M12D25E6(2)||M12D26E7(2)||M12D25E7(2)"
+    }
+  ]
+}

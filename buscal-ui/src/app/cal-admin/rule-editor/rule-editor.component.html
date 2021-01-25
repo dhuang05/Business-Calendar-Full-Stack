@@ -1,0 +1,46 @@
+<div class="flow-layout">
+  <div class= "div-left">
+    <div class="flow-layout">
+      <div class="div-left"><a class= "b-link" mat-button (click)="help()">Help 
+        <mat-icon
+          class="example-tab-icon">library_books</mat-icon> </a></div>
+      <div class="div-center">
+        <mat-label>{{data.title}}</mat-label>
+      </div>
+      <div class="div-right">
+        <button *ngIf="previousExpr" class = "no-border-button" (click)="undoPast()"><mat-icon>restore</mat-icon></button> &nbsp;&nbsp;
+      </div>
+    </div>
+    <textarea class="editor" [(ngModel)]="data.expression" (input)="changeExpr($event)" rows="26" cols="50">
+        </textarea>
+    <div class="flow-layout" style="align-content: center;">
+      <div class="div-left">
+        <button mat-button mat-dialog-close (click)="cancel()" cdkFocusInitial>Cancel</button> &nbsp;&nbsp;&nbsp;
+      </div>
+      <div class="div-center">
+        <button *ngIf="canSave && isEdited()" mat-button (click)="saveRule()"><span style="color:red">Accept</span></button>
+      </div>
+      <div class="div-right">
+        <button *ngIf="data.expression && data.expression.trim()" mat-button (click)="testRule()">Test</button>
+      </div>
+    </div>
+  </div>
+  <div  class= "div-center" style="padding-left:4px; text-align :left;">
+    <div><span class= "header3" >Samples (double click to past)</span></div>
+    <div>&nbsp; </div>
+    <div class = "div-sample">
+      <div  *ngFor="let sample of samples">
+        <button *ngIf = "sample.expr != ''" class = "no-border-button" [cdkCopyToClipboard]="sample.expr" (dblclick) = "copyToRule(sample.expr);">{{sample.expr}}</button> 
+        <!-- span style = "font-weight: 400; font-size:10px; color: darkgrey;"> &nbsp;{{sample.desc}}</span --></div>
+    </div>
+  </div>
+  <div  class= "div-right" style = "text-align: left; ">
+    <div><span class= "header3" >Add-on dates expressions</span></div>
+    <div>&nbsp;</div>
+    <div class = "div-sample">
+      <div *ngFor = "let expr of functionNames">
+        <button class = "no-border-button" [cdkCopyToClipboard]="expr"  (dblclick) = "copyToRule(expr);">{{expr}}</button>
+      </div>
+    </div>
+  </div>
+</div>

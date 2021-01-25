@@ -1,0 +1,97 @@
+<div class ="outmost">
+     <cal-admin-header [currentPageName] = "'API'"></cal-admin-header>
+     <div class = "div-right"><button class= "no-border-button" *ngIf = "calendarOwnerships" href="#" (click) = "showCalInfos()"> Show all accessible calendar</button></div>
+    <div style="border: solid 1px;  padding: 15px;">
+        <div>
+            <div><span class="label1">API:</span> <span class="label2b"> to find out available time slot of 'duration'
+                    span since 'sinceDateTime' based on 'localZoneId' of calendar with 'calId'.</span></div>
+            <div><span class="label2a">GET &nbsp;&nbsp; </span> <span style="color:blue;">{{getTimeslotUrl()}}</span></div>
+            <div><span class="label1">path variables:</span></div>
+            <div><span class="label2a">&nbsp;&nbsp;&nbsp;&nbsp;calId:</span> <span class="label2b"> Calendar id, in case of public accessable calendars, the it has pattern <i>***</i><b>@</b><i>STATE</i><b>_</b><i>COUNTRY</i>, otherwise it is string stoken.</span>
+            </div>
+            <div><span class="label2a">&nbsp;&nbsp;&nbsp;&nbsp;duration:</span> <span class="label2b"> Format '9d9h9m',
+                    here, d means woeking Day, h means whorking Hour, m means working Minutes 9 means number. example: '3d2h30m' means the time
+                    slot has 3 days, 2 hours and 30 minutes. 'm1' for first available time. </span> </div>
+            <div><span class="label1">Paramters: </span></div>
+            <div><span class="label2a">&nbsp;&nbsp;&nbsp;&nbsp;localZoneId:</span> <span class="label2b"> Optional, it
+                    ask api to return extra set of datetimes based on this timezone, together with datetime on the
+                    timezone defined the calendar. it defaults to the timezone of target calendar</span></div>
+            <div><span class="label2a">&nbsp;&nbsp;&nbsp;&nbsp;sinceDateTime:</span> <span class="label2b"> Optional, it
+                    references to localZoneId if defined, otherwise to the timezone defined the calendar. it default to
+                    'now'. </span> </div>
+        </div>
+        <hr/>
+        <span class = "error">{{requestTimeSlotError}}</span>
+        <div>
+            <mat-form-field appearance="legacy" style="width: 250px;">
+                <mat-label>calId</mat-label>
+                <mat-select [(ngModel)]="timeSlotRequest.calId">
+                  <mat-option><span style="color:red">please select</span></mat-option>
+                  <mat-option *ngFor="let calendarOwnership of calendarOwnerships" [value]="calendarOwnership.calId">{{calendarOwnership.description}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <span>&nbsp;&nbsp;</span>
+            <mat-form-field class="example-margin" style="width:60px">
+                <mat-label>Day</mat-label>
+                <input matInput type="number" min= "0" [(ngModel)]="timeSlotRequest.day">
+            </mat-form-field>
+            <span>&nbsp;&nbsp;</span>
+            <mat-form-field class="example-margin" style="width:60px">
+                <mat-label>Hour</mat-label>
+                <input matInput type="number" min= "0" max="8"[(ngModel)]="timeSlotRequest.hour" >
+            </mat-form-field>
+            <span>&nbsp;&nbsp;</span>
+            <mat-form-field class="example-margin" style="width:60px">
+                <mat-label>Minute</mat-label>
+                <input matInput type="number" min= "0" max="59"[(ngModel)]="timeSlotRequest.minute" >
+            </mat-form-field>
+            <span>&nbsp;&nbsp;</span>
+            <mat-form-field appearance="legacy">
+                <mat-label>localZoneId</mat-label>
+                <mat-select  [(ngModel)]="timeSlotRequest.timezoneId">
+                  <mat-option><span style="color:red">please select</span></mat-option>
+                  <mat-option *ngFor="let timezone of timezones" [value]="timezone">{{timezone}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <span>&nbsp;&nbsp;</span>
+            <mat-form-field class="example-margin" style="width: 250px;">
+                <mat-label>sinceDateTime</mat-label>
+                <input matInput type="datetime-local" [(ngModel)]="timeSlotRequest.sinceDateTime">
+            </mat-form-field>
+
+            <button mat-raised-button (click) = "requestTimeSlot()" >Send Request</button>
+        </div>
+    </div>
+
+    <div> &nbsp; </div>
+
+    <div style="border: solid 1px; padding: 15px;">
+        <div>
+            <div><span class="label1">API:</span><span class="label2b"> to request calendar infomation about working
+                    hour. holiday info of target calendar with 'calId' in the year.</span></div>
+            <div><span class="label2a">GET</span> <span style="color: blue;"> {{getCalendarInfoUrl()}}</span></div>
+            <div><span class="label1">path variables:</span></div>
+            <div><span class="label2a">&nbsp;&nbsp;&nbsp;&nbsp;calId:</span> <span class="label2b"> Calendar id, in case of public accessable calendars, the it has pattern <i>***</i><b>@</b><i>STATE</i><b>_</b><i>COUNTRY</i>, otherwise it is string stoken.</span>
+            <div><span class="label2a">&nbsp;&nbsp;&nbsp;&nbsp;year:</span> <span class="label2b">The Year of target
+                    calendar infomation </span></div>
+            <div><span class="label1">Paramters:</span><span class="label2b">N/A</span></div>
+        </div>
+        <hr/>
+        <span class = "error">{{requestCalInfoError}}</span>
+        <div>
+            <mat-form-field appearance="legacy" style="width: 250px;">
+                <mat-label>calId</mat-label>
+                <mat-select [(ngModel)]="calInfoRequest.calId">
+                  <mat-option><span style="color:red">please select</span></mat-option>
+                  <mat-option *ngFor="let calendarOwnership of calendarOwnerships" [value]="calendarOwnership.calId">{{calendarOwnership.description}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <span>&nbsp;&nbsp;</span>
+            <mat-form-field class="example-margin" style="width:60px">
+                <mat-label>Year</mat-label>
+                <input matInput type="number" [min] = "calInfoRequest.min" [max]="calInfoRequest.max"[(ngModel)]="calInfoRequest.year" >
+            </mat-form-field>
+            <button mat-raised-button (click) = "requestCalInfo()" >Send Request</button>
+        </div>
+    </div>
+</div>

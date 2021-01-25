@@ -1,0 +1,36 @@
+<div *ngIf="businessHour">
+  <div class="flow-layout">
+   
+    <div>
+      <mat-form-field appearance="legacy">
+        <mat-label>Rule Name</mat-label>
+        <input matInput class="input" (change) = "checkValue(true)" name="desc" type="text"  [(ngModel)]="businessHour.desc"/>
+      </mat-form-field>
+    </div>
+    <div>
+      <a href="#" (click) = "delete()" > <mat-icon style="font-size:14px; color: rgb(218, 83, 49);">clear</mat-icon> </a>
+    </div>
+</div>
+  <div><span></span><input matInput class="input"  name="description" type="time" min="00:00" max="23:99" pattern="[0-9]{2}:[0-9]{2}" [(ngModel)]="businessHour.businessHourFrom" placeholder="start time" (change)="checkValue(true)" style = "width: 100px; font-size:14px;"/></div>
+  <div><span></span><input matInput class="input"  name="description" type="time" min="00:00" max="23:99" pattern="[0-9]{2}:[0-9]{2}" [(ngModel)]="businessHour.businessHourTo" placeholder="end time"  (change)="checkValue(true)" style = "width: 100px;  font-size:14px;"/></div>
+  <div style="padding-top: 10px;">
+    <mat-form-field>
+      <mat-label>Rule Expression</mat-label>
+      <textarea matInput
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="2"
+                cdkAutosizeMaxRows="5"
+                (input) = "checkValue(true)"
+                (click) = "openEditor()"
+                class = "rule"
+                [style] = "ruleStyle()"
+                readonly
+                [(ngModel)]="businessHour.dayExpr">
+              </textarea>
+    </mat-form-field>
+  </div>
+  <div >
+    <cal-error [errorInfo]="errorInfo"></cal-error>
+  </div>
+</div>

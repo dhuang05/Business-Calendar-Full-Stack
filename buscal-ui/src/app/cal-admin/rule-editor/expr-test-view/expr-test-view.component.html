@@ -1,0 +1,32 @@
+<div *ngIf="exprTestResult">
+  <button (click) = "ok()" >close</button>
+  <h3>{{exprTestResult?.name}}</h3>
+  <div><span [className] = "exprTestResult?.success? 'label' : 'error'" ><b>Status: </b>{{exprTestResult?.success? 'Success' : 'Failure'}}</span></div>
+
+  <div><span class = "label"><b>Test datatime: </b>{{exprTestResult?.testDate}}</span></div>
+ 
+  <div *ngIf="exprTestResult && exprTestResult?.ruleDates">
+    <h3>Dates matched in year {{exprTestResult.year}} </h3>
+    <div>
+      <ul *ngIf = "hasDates()">
+        <li *ngFor = "let ruleDate of exprTestResult?.ruleDates">
+          <span>{{ruleDate}} &nbsp; &nbsp; &nbsp;</span>
+        </li>
+      </ul>
+      <div *ngIf = "!hasDates()">
+        <span>No date matched</span>
+     </div>
+    </div>
+  </div>
+
+  <div *ngIf="exprTestResult && exprTestResult?.ruleExprError && exprTestResult?.ruleExprError?.elementErrors">
+    <h2> Expression </h2>
+    <div *ngFor = "let element of exprTestResult?.ruleExprError?.elementErrors">
+         <span> 
+           <span [className] = "!element.error && element?.error?.trim() != '' ? 'label' : 'errorExpr'"> &nbsp; {{element?.text}} &nbsp; </span>
+           <span [className] = "!element.error && element?.error?.trim() != '' ? 'label' : 'error'"> &nbsp; {{element?.error}} &nbsp; </span>
+        </span>
+    </div>
+  </div>
+  <button (click) = "ok()" >close</button>
+</div>

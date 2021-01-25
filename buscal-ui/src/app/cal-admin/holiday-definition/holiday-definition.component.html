@@ -1,0 +1,44 @@
+<div *ngIf="holidayRule" class="outmost">
+  <div>
+    <div class="flow-layout">
+      <div>
+        <mat-form-field appearance="legacy">
+          <mat-label>Holiday Name</mat-label>
+          <input matInput class="input" (input) = "checkValue(true)" name="desc" type="text" [(ngModel)]="holidayRule.desc" />
+        </mat-form-field>
+      </div>
+      <div>
+        <a href="#" (click)="delete()">
+          <mat-icon style="font-size:14px; color: rgb(218, 83, 49);">clear</mat-icon>
+        </a>
+        <span>  &nbsp;&nbsp; &nbsp;&nbsp;</span>
+      </div>
+    </div>
+    <div><span class="label">Rule Effective dates (default empty):</span></div>
+    <div><input matInput class="input" name="effectiveDate" type="date" [(ngModel)]="holidayRule.effectiveDate"
+        placeholder="effective date " style="width: 140px; font-size:14px; color:darkgray" /> 
+        <a *ngIf = "holidayRule.effectiveDate" href="#" (click)="deleteEffectiveDate()">
+          <mat-icon style="font-size:14px; color: rgb(218, 83, 49);">clear</mat-icon>
+        </a>
+      </div>
+    <div><input matInput class="input" name="expiryDate" type="date" [(ngModel)]="holidayRule.expiredDate"
+        placeholder="expiry date" style="width: 140px;  font-size:14px; color:darkgray" />
+        <a *ngIf= "holidayRule.expiredDate" href="#" (click)="deleteExpiryDate()">
+          <mat-icon style="font-size:14px; color: rgb(218, 83, 49);">clear</mat-icon>
+        </a>
+      </div>
+      <div style="padding-top: 10px;">
+        <mat-form-field>
+          <mat-label>Rule Expression</mat-label>
+          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+            cdkAutosizeMaxRows="5" 
+            (click) = "openEditor()"
+            class = "rule"
+            [style] = "ruleStyle()" 
+            (change)="checkValue(true)" readonly [(ngModel)]="holidayRule.expr">
+          </textarea>
+        </mat-form-field>
+      </div>
+  </div>
+  <cal-error [errorInfo]="errorInfo"></cal-error>
+</div>

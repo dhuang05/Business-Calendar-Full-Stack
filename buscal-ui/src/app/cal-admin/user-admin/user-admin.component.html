@@ -1,0 +1,142 @@
+<div class="outmost">
+    <cal-admin-header [currentPageName]="'USER_ADMIN'"></cal-admin-header>
+    <div style="padding:15px;">
+        <mat-accordion class="example-headers-align">
+            <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <span style="font-size:18px; font-weight:700; color:darkgreen">Organization</span>
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        <span style="font-size:16px; font-weight:700; color:darkgreen">Create or Edit Organization</span>
+                        <mat-icon>group</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <ng-container *ngTemplateOutlet="organizationDiv"> </ng-container>
+            </mat-expansion-panel>
+        </mat-accordion>
+
+        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <span style="font-size:18px; font-weight:700;color:darkgreen">User</span>
+                </mat-panel-title>
+                <mat-panel-description>
+                    <span style="font-size:16px; font-weight:700; color:darkgreen">Add or Edit User</span>
+                    <mat-icon>people_add</mat-icon>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <ng-container *ngTemplateOutlet="userDiv"> </ng-container>
+        </mat-expansion-panel>
+    </div>
+</div>
+
+
+<ng-template #organizationDiv>
+        <div style="border: solid 1px rgb(240, 240, 240);"></div>
+        <span class="error">{{organizationMessage}}</span>
+        <div class="flow-layout">
+            <div class="div-left">
+                <div>
+                    <div *ngIf = "hasAdmin">
+                        <mat-form-field class="example-margin" style = "width:250px;">
+                            <mat-label>Organization Name (* as wildcard) </mat-label>
+                            <input matInput type="text" [(ngModel)]="organizationNameToSearch">
+                        </mat-form-field>
+                        <button mat-raised-button (click)="searchOrganizations()">Search Organizations</button>
+                        <span>&nbsp;&nbsp;</span>
+                        <button class="no-border-button" (click)="findOrganizations()">List Organizations</button>
+                    </div>
+                    <ul>
+                        <li *ngIf = "isUserHasSuperRole"><button class="no-border-button" (click)="setNewOrg()">New Organization</button></li>
+                        <li *ngFor= "let org of organizations"><button class="no-border-button" (click)="setCurrentOrg(org)">{{org.orgName}}</button>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             <button class="no-border-button" (click)="addEditUser(org)"> <mat-icon>person</mat-icon></button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class = "div-center" *ngIf="organization">
+                <mat-grid-list cols="2" rowHeight="60px">
+                    <mat-grid-tile>
+                        <mat-form-field appearance="legacy" style = "width:250px;">
+                            <mat-label><span [class] = "isEmpty(organization.orgName) ?  'required' : 'filled'">Organization Name</span></mat-label>
+                            <input matInput type="text" [(ngModel)]="organization.orgName">
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <mat-form-field appearance="legacy" style = "width:250px;">
+                            <mat-label><span [class] = "isEmpty(organization.address) ?  'required' : 'filled'">Organization Address</span></mat-label>
+                            <input matInput type="text" [(ngModel)]="organization.address">
+                        </mat-form-field>
+                    </mat-grid-tile>
+                </mat-grid-list>
+                <div><h3>Contact Person</h3></div>
+                <cal-person [person] = "organization.firstContactPerson" [required] = "true"></cal-person>
+                <br/>
+                <button mat-raised-button (click)="saveOrganization()">Save Organization</button>
+            </div>
+        </div>
+</ng-template>
+
+
+
+<ng-template #userDiv>
+    <div style="border: solid 1px rgb(240, 240, 240);"></div>
+    <span class="error">{{userMessage}}</span>
+    <div class="flow-layout">
+        <div class="div-left">
+            <div>
+                <mat-form-field appearance="legacy" style = "width:250px;">
+                    <mat-label>User Name (* as wild card) </mat-label>
+                    <input matInput type="text" [(ngModel)]="userNameToSearch">
+                </mat-form-field>
+                <button mat-raised-button (click)="searchUsers()">search all</button>
+                <span>&nbsp;&nbsp;&nbsp;</span>
+                <a href="#" class="b-link" (click)="findUsers()">List users</a>
+                <ul>
+                    <li><a class="b-link" href="#" (click)="setNewUser()">New User</a></li>
+                    <li *ngFor= "let auser of users"><a class="b-link" href="#" (click)="setCurrentUser(auser)">{{auser.userId}} : {{auser.person?.firstName}} &nbsp; {{auser.person?.lastName}} </a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="div-center" *ngIf = "user" >
+            <div class="div-center"><h3>{{userOrgName}}</h3></div>
+            <mat-grid-list cols="2" rowHeight="60px">
+                <mat-grid-tile *ngIf = "isNewUser">
+                    <mat-form-field appearance="legacy" style = "width:250px;">
+                        <mat-label><span [class] = "isEmpty(user.userId) ?  'required' : 'filled'">User Id (or Email) </span></mat-label>
+                        <input matInput type="text" (change) = "userIdValidate()" [(ngModel)]="user.userId">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="legacy"  style = "width:250px;">
+                        <mat-label><span [class] = "!userRoles || userRoles.length === 0  ?  'required' : 'filled'">Roles</span></mat-label>
+                        <mat-select multiple [(ngModel)]="userRoles" style="width:250px;">
+                            <mat-option value="API_ROLE">API</mat-option>
+                            <mat-option value="ADMIN_ROLE">Admin</mat-option>
+                            <mat-option *ngIf="isUserHasSuperRole" value="SUPER_ADMIN_ROLE">Super Admin</mat-option>
+                            <mat-option *ngIf="hasAdmin && !isEditItself()" value="TRIAL_ROLE">Trial Only</mat-option>
+                        </mat-select>
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field appearance="legacy" style = "width:250px;">
+                        <mat-label><span [class] = "isPasswordRequired() ?  'required' : 'filled'"> {{passwordLabel()}} </span></mat-label>
+                        <input matInput type="password"  [(ngModel)]="user.password">
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-radio-group [(ngModel)]="user.status" *ngIf= "!isEditItself()" aria-label="User Status">
+                        <mat-radio-button value="ACTIVE">active</mat-radio-button>
+                        &nbsp;&nbsp;
+                        <mat-radio-button value="PENDING">pending</mat-radio-button>
+                      </mat-radio-group>
+                </mat-grid-tile>
+            </mat-grid-list>
+            <cal-person [person] = "user.person" [required] = "true"></cal-person>
+            <br/>
+            <button mat-raised-button (click)="saveUser()">Save User</button>
+        </div>
+    </div>
+</ng-template>

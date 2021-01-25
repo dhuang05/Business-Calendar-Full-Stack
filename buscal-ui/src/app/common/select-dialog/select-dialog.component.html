@@ -1,0 +1,21 @@
+<div style="text-align: center;">
+  <h3><span class="title">{{data.title}}</span></h3>
+  <div>
+    
+    <div  class="div-center" style="width:90%">&nbsp;</div>
+    <div>
+      <select (change) = "selected()" [(ngModel)]="data.selectedValue" style= "width: 200px;">
+        <option [value]="undefined"  selected>None</option>
+        <option *ngFor="let optionData of data.options" [value]="optionData.value">{{optionData.name}}</option>
+      </select>
+    </div>
+    <div  class="div-center" style="width:90%">&nbsp;</div>
+  
+    <div class = "flow-layout" mat-dialog-actions>
+      <div class="div-right"><button mat-button mat-dialog-close (click)="no()">Cancel</button></div>
+      <div  class="div-center" style="width:90%">&nbsp;</div>
+      <div class="div-left"><button mat-button mat-dialog-close (click)="yes()"  cdkFocusInitial>OK</button></div>
+    </div>
+  </div>
+  
+</div>

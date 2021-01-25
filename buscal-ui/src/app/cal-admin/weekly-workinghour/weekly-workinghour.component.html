@@ -1,0 +1,8 @@
+<div class="block" *ngIf="businessHour">
+  <div><span>{{businessHour.desc}}</span> <a *ngIf="this.businessHour?.businessHourFrom || this.businessHour?.businessHourTo" href="#" (click) = "delete()" > <mat-icon style="font-size:14px; color: rgb(218, 83, 49);">clear</mat-icon> </a></div>
+  <div><input matInput class="input"  name="description" type="time" min="00:00" max="23:99" pattern="[0-9]{2}:[0-9]{2}" [(ngModel)]="businessHour.businessHourFrom" placeholder="start time" (change)="checkValue(true)" style = "width: 100px; font-size:14px;"/></div>
+  <div><input matInput class="input"  name="description" type="time" min="00:00" max="23:99" pattern="[0-9]{2}:[0-9]{2}" [(ngModel)]="businessHour.businessHourTo" placeholder="end time"  (change)="checkValue(true)" style = "width: 100px;  font-size:14px;"/></div>
+  <div class="error">
+    <cal-error [errorInfo]="errorInfo"></cal-error>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div *ngIf="person">
+    <mat-grid-list cols="2" rowHeight="60px">
+        <mat-grid-tile>
+            <mat-form-field class="example-margin" style = "width:250px;">
+                <mat-label>Title</mat-label>
+                <input matInput type="text" [(ngModel)]="person.title">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field class="example-margin" style = "width:250px;">
+                <mat-label>Solute</mat-label>
+                <input matInput type="text" [(ngModel)]="person.solute">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field class="example-margin" style = "width:250px;">
+                <mat-label><span [class] = "isEmpty(person.firstName) && required?  'required' : 'filled'"> First Name </span></mat-label>
+                <input matInput type="text" [(ngModel)]="person.firstName">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field class="example-margin" style = "width:250px;">
+                <mat-label><span [class] = "isEmpty(person.lastName)  && required?  'required' : 'filled'"> Last Name </span></mat-label>
+                <input matInput type="text" [(ngModel)]="person.lastName">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field class="example-margin" style = "width:250px;">
+                <mat-label><span [class] = "isEmpty(person.contact.email)  && required?  'required' : 'filled'">Email  </span></mat-label>
+                <input matInput type="email" [(ngModel)]="person.contact.email">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field class="example-margin" style = "width:250px;">
+                <mat-label>Mailing Address </mat-label>
+                <input matInput type="text" [(ngModel)]="person.contact.mailingAddress">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field class="example-margin" style = "width:250px;">
+                <mat-label>Primary Phone </mat-label>
+                <input matInput type="text" [(ngModel)]="person.contact.primaryPhone">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field class="example-margin" style = "width:250px;">
+                <mat-label>Secondary Phone </mat-label>
+                <input matInput type="text" [(ngModel)]="person.contact.secondaryPhone">
+            </mat-form-field>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

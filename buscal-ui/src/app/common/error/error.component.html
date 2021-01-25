@@ -1,0 +1,7 @@
+<div *ngIf="errorInfo">
+  <span *ngIf = "errorInfo.title" class="title">{{errorInfo.title}}</span>
+  <ol *ngIf = "errorInfo.errMsgs && errorInfo.errMsgs.length > 0">
+    <li class="error" *ngFor="let errMsg of errorInfo.errMsgs">{{errMsg}}</li>
+  </ol>
+  <span *ngIf = "errorInfo.note" class="note">{{errorInfo.note}}</span>
+</div>

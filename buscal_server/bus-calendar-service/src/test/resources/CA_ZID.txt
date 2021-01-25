@@ -1,0 +1,13 @@
+Alberta	Canada/Mountain
+British Columbia	Canada/Pacific
+Manitoba	Canada/Central
+New Brunswick	Canada/Atlantic
+Newfoundland and Labrador	Canada/Newfoundland
+Northwest Territories	Canada/Atlantic
+Nova Scotia	Canada/Atlantic
+Nunavut	Canada/Central
+Ontario	Canada/Eastern
+Prince Edward Island	Canada/Atlantic
+Quebec	Canada/Eastern
+Saskatchewan	Canada/Saskatchewan
+Yukon	Canada/Yukon

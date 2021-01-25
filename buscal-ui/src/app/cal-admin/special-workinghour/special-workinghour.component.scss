@@ -1,0 +1,50 @@
+@import '../../../scss/variables.scss';
+
+.button{
+    width: 251px;
+    height: 42px;
+    border-radius: 3px;
+    outline:none;
+    text-align: center;
+    padding: 6px 10;
+    font-size: 18px;
+    margin-top:20px;
+    color:$primary-action;
+    border:1px solid;
+    cursor:pointer;
+  }
+
+.error{
+    text-align:center;
+    margin: 0 auto;
+    color: #EF3E3E;
+    min-height: 10px;
+    height: 20px;
+    font-size: 10px;
+}
+
+.label {
+    text-align:left;
+    padding-left:3px;
+    padding-top:15px;
+    margin: 0 auto;
+    width:120px;
+}
+
+.extra {
+    text-align:center;
+    padding-left:3px;
+    padding-top:5px;
+    margin: 0 auto;
+    width:250px;
+    font-size: 11px;
+}
+
+.flow-layout {
+    display: flex;
+}
+
+.rule {
+    font-size:12px;
+    color: grey;
+}

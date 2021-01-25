@@ -1,0 +1,108 @@
+@import '../../../scss/variables.scss';
+.header-title {
+    padding: 5px;
+    text-align: center;
+    background: #599689;
+    color: white;
+    font-size: 30px;
+}
+
+.button{
+    width: 250px;
+    height: 30px;
+    border-radius: 3px;
+    outline:none;
+    text-align: center;
+    padding: 2px;
+    font-size: 14px;
+    margin-top:2px;
+    color:$primary-action;
+    border:1px solid $primary-action;
+    cursor:pointer;
+  }
+
+.error{
+    text-align:center;
+    margin: 0 auto;
+    color: #EF3E3E;
+    min-height: 10px;
+    height: 20px;
+}
+
+.label {
+    text-align:left;
+    padding-left:3px;
+    padding-top:5px;
+    margin: 0 auto;
+    width:250px;
+}
+
+
+.input {
+    padding-top:20px;
+    text-align:center;
+    margin: 0 auto;
+    width:250px;
+}
+
+.error{
+    text-align:center;
+    margin: 0 auto;
+    color: red;
+    min-height: 50px;
+    height: 50px;
+}
+
+
+.extra {
+    text-align:center;
+    padding-left:3px;
+    padding-top:5px;
+    margin: 0 auto;
+    width:250px;
+    font-size: 11px;
+}
+
+.flex-container {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.div-center {
+    text-align:center;
+    margin: 0 auto;
+    width:250px;
+}
+.div-left {
+    text-align:left;
+    margin: 0 auto;
+    width:250px;
+}
+.div-right {
+    text-align:right;
+    margin: 0 auto;
+    width:250px;
+}
+.outmost {
+    height: 100%;
+    width: 100%;
+    padding: 3px;
+    overflow-y: scroll;
+}
+
+.inputed {
+    color: black;
+}
+.required {
+    color: darkred;
+}
+
+.example-margin {
+    width:250px; 
+    height: 30px;
+}
+
+mat-grid-tile {
+    background: white;
+}

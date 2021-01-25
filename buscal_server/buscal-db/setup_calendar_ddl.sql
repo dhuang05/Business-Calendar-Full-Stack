@@ -1,0 +1,107 @@
+
+
+ CREATE TABLE CONTACT (
+     CONTACT_ID varchar(64) NOT NULL,
+     MAIL_ADDRESS varchar(128) NULL,
+     EMAIL varchar(32) NOT NULL,
+     PRIMARY_PHONE varchar(16),
+     SECONDARY_PHONE varchar(16),
+     OTHER_INFO varchar(64),
+     CONSTRAINT PK_CONTACT PRIMARY KEY (CONTACT_ID)
+  );
+
+ CREATE TABLE PERSON (
+     PERSON_ID varchar(64) NOT NULL,
+     CONTACT_ID varchar(64) NOT NULL,
+     TITLE varchar(30) NULL,
+     SOLUTE varchar(30) NULL,
+     FIRST_NAME varchar(64) NOT NULL,
+     LAST_NAME varchar(64) NOT NULL,
+     POSITION varchar(128) NOT NULL,
+     CONSTRAINT PK_PERSON PRIMARY KEY (PERSON_ID),
+     FOREIGN KEY (CONTACT_ID) REFERENCES CONTACT (CONTACT_ID)
+  );
+
+
+  CREATE TABLE ORGANIZATION (
+      ORG_ID  varchar(64) NOT NULL,
+      ORG_NAME varchar(128),
+      FIRST_CONTACT_PERSON_ID varchar(64),
+      SECOND_CONTACT_PERSON_ID varchar(64),
+      PARENT_ORG_ID  varchar(64),
+      CATEGORY varchar(64),
+      ADDRESS varchar(128),
+      CONSTRAINT PK_ORGANIZATION PRIMARY KEY (ORG_ID),
+      FOREIGN KEY (PARENT_ORG_ID) REFERENCES ORGANIZATION (ORG_ID),
+      FOREIGN KEY (FIRST_CONTACT_PERSON_ID) REFERENCES PERSON (PERSON_ID),
+      FOREIGN KEY (SECOND_CONTACT_PERSON_ID) REFERENCES PERSON (PERSON_ID)
+  );
+
+
+ CREATE TABLE USERS (
+     USER_ID varchar(64) NOT NULL,
+     PERSON_ID varchar(64) NOT NULL,
+     ORG_ID  varchar(64) NOT NULL,
+     STATUS  varchar(64) NOT NULL,
+     PASSWORD varchar(256) NOT NULL,
+     RESET_TOKEN varchar(256),
+     TOKEN  varchar(512),
+     CREATED_DATE timestamp NOT NULL default CURRENT_TIMESTAMP,
+     TOKEN_CREATED_DATE timestamp,
+     CONSTRAINT PK_USERS PRIMARY KEY (USER_ID),
+     FOREIGN KEY (PERSON_ID) REFERENCES PERSON (PERSON_ID),
+     FOREIGN KEY (ORG_ID) REFERENCES ORGANIZATION (ORG_ID)
+  );
+
+    CREATE TABLE USER_RESET_REQUEST (
+        REQUEST_ID bigint(20) NOT NULL AUTO_INCREMENT,
+        USER_ID varchar(64) NOT NULL,
+        EMAIL varchar(64) NOT NULL,
+        STATUS  varchar(64) NOT NULL default 'ACTIVE',
+        INFO varchar(256),
+        REQUESTED_DATE timestamp NOT NULL default CURRENT_TIMESTAMP,
+        CONSTRAINT USER_RESET_REQUEST PRIMARY KEY (REQUEST_ID)
+    );
+
+  CREATE TABLE ROLES (
+       ROLE_ID varchar(64) NOT NULL,
+       DESCRIPTION varchar(256) NOT NULL,
+       CONSTRAINT PK_ROLES PRIMARY KEY (ROLE_ID)
+    );
+
+  CREATE TABLE USER_ROLES (
+         USER_ID varchar(64) NOT NULL,
+         ROLE_ID varchar(64) NOT NULL,
+         FOREIGN KEY (USER_ID) REFERENCES USERS (USER_ID),
+         FOREIGN KEY (ROLE_ID) REFERENCES ROLES (ROLE_ID)
+  );
+
+
+ CREATE TABLE CALENDAR_OWNERSHIP (
+     CAL_ID  varchar(64) NOT NULL,
+     VERSION  DECIMAL(6,3) NOT NULL default 1.00,
+     TOKEN  varchar(64),
+     DESCRIPTION  varchar(128),
+     CALENDAR_INST_JSON TEXT,
+     CALENDAR_INST_URL varchar(128),
+     OWNER_ID varchar(64) NOT NULL,
+     STATUS  varchar(64) NOT NULL default 'ACTIVE',
+     NOTE  varchar(128),
+     CONSTRAINT CALENDAR_OWNERSHIP PRIMARY KEY (CAL_ID, VERSION),
+     FOREIGN KEY (OWNER_ID) REFERENCES ORGANIZATION (ORG_ID)
+ );
+
+ CREATE TABLE undo_log (
+   id bigint(20) NOT NULL AUTO_INCREMENT,
+   branch_id bigint(20) NOT NULL,
+   xid varchar(100) NOT NULL,
+   context varchar(128) NOT NULL,
+   rollback_info longblob NOT NULL,
+   log_status int(11) NOT NULL,
+   log_created datetime NOT NULL,
+   log_modified datetime NOT NULL,
+   ext varchar(100) DEFAULT NULL,
+   PRIMARY KEY (id),
+   UNIQUE KEY ux_undo_log (xid,branch_id)
+ );
+

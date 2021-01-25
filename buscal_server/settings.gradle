@@ -1,0 +1,4 @@
+rootProject.name = 'bus_cal_microservices'
+include 'eureka-server',
+        'zuul-server',
+        'bus-calendar-service'
