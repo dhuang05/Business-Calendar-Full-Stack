@@ -6,3 +6,4 @@ It provides Restful API for business automation, also provides user Admin for cr
 
 All copyright reserved, Nusino Technologies Inc, 2021.
 
+![Alt text](../doc/calendar_admin.png?raw=true "Calendar admin")
