@@ -8,11 +8,9 @@ import com.nusino.microservices.service.buscalendar.expr.DayRuleExprInterpretor;
 import com.nusino.microservices.service.buscalendar.expr.exprif.ExprInterpretor;
 import com.nusino.microservices.service.buscalendar.expr.model.DayRuleExpr;
 import com.nusino.microservices.service.buscalendar.expr.model.Expr;
-import com.nusino.microservices.service.buscalendar.expr.model.Pair;
 import com.nusino.microservices.service.buscalendar.expr.model.standard.*;
 import com.nusino.microservices.service.buscalendar.expr.model.standard.func.AddOnFuncExpr;
 import com.nusino.microservices.service.buscalendar.expr.model.standard.func.CustomFuncExpr;
-import com.nusino.microservices.service.buscalendar.expr.model.standard.func.GoodFridayFuncExpr;
 import com.nusino.microservices.service.buscalendar.expr.stdexpr.*;
 import com.nusino.microservices.service.buscalendar.expr.stdexpr.func.AddOnFuncExprInterpretor;
 import com.nusino.microservices.service.buscalendar.expr.stdexpr.func.CustomFuncExprInterpretor;
@@ -26,18 +24,27 @@ import javax.script.ScriptException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
+import java.util.concurrent.locks.StampedLock;
 import java.util.regex.Pattern;
 
 public class ExprEngine {
+
+    //
     private final Map<String, Boolean> EVAL_RESULT_CACHE = new HashMap();
     private final Map<String, String> FUNC_EVAL_RESULT_CACHE = new HashMap();
-    //
     private final Map<String, DayRuleExpr> DAY_RULE_EXPR_OBJ_CACHE = new HashMap();
     private final Map<String, DateExpr> DATE_EXPR_OBJ_CACHE = new HashMap();
+    // dynamic write need locked
+    private final StampedLock LOCKER_EVAL_RESULT_CACHE = new StampedLock();
+    private final StampedLock LOCKER_FUNC_EVAL_RESULT_CACHE = new StampedLock();
+    private final StampedLock LOCKER_DAY_RULE_EXPR_OBJ_CACHE = new StampedLock();
+    private final StampedLock LOCKER_DATE_EXPR_OBJ_CACHE = new StampedLock();
 
-    private final Map<Class, ExprInterpretor> STARDARD_EXPR_INTERPRETOR_CACHE = new LinkedHashMap();
-    private final Map<Class, ExprInterpretor> BUILT_IN_FUNC_EXPR_INTERPRETOR_CACHE = new LinkedHashMap();
-    private final Map<Class, ExprInterpretor> EXTERNAL_FUNC_EXPR_INTERPRETOR_CACHE = new LinkedHashMap();
+
+    //not required locked onetime write
+    private final Map<Class, ExprInterpretor> STARDARD_EXPR_INTERPRETOR_MAP = new LinkedHashMap();
+    private final Map<Class, ExprInterpretor> BUILT_IN_FUNC_EXPR_INTERPRETOR_MAP = new LinkedHashMap();
+    private final Map<Class, ExprInterpretor> EXTERNAL_FUNC_EXPR_INTERPRETOR_MAP = new LinkedHashMap();
 
     public final LogicExprInterpretor logicExprInterpretor = new LogicExprInterpretor();
     public final YmdValueExprInterpretor ymdValueExprInterpretor = new YmdValueExprInterpretor();
@@ -45,8 +52,7 @@ public class ExprEngine {
     public final List<ExprInterpretor> allParameterizedExprInterpretors = new ArrayList<>();
 
     private final DayRuleExprInterpretor dayRuleExprInterpretor;
-
-    private final Map<Class, ExprInterpretor> ALL_EXPR_INTERPRETOR_CACHE = new LinkedHashMap();
+    private final Map<Class, ExprInterpretor> ALL_EXPR_INTERPRETOR_MAP = new LinkedHashMap();
 
     //not Nashorn ScriptEngine is threadsafe
     private static final String SCRIPT_ENGINE_NAME = "graal.js";
@@ -72,19 +78,19 @@ public class ExprEngine {
 
     private void init() {
         //
-        STARDARD_EXPR_INTERPRETOR_CACHE.put(DateExpr.class, new DateExprInterpretor());
-        STARDARD_EXPR_INTERPRETOR_CACHE.put(ValueExpr.class, new ValueExprInterpretor());
-        STARDARD_EXPR_INTERPRETOR_CACHE.put(LastDayOfXMonthExpr.class, new LastDayOfXMonthExprInterpretor());
-        STARDARD_EXPR_INTERPRETOR_CACHE.put(XDayOfWeekXInMonthXExpr.class, new XDayOfWeekXInMonthXExprInterpretor());
-        STARDARD_EXPR_INTERPRETOR_CACHE.put(LastXDayOfWeekXInMonthXExpr.class, new LastXDayOfWeekXInMonthXExprInterpretor());
-        STARDARD_EXPR_INTERPRETOR_CACHE.put(XDayOfWeekXInYearExpr.class, new XDayOfWeekXInYearExprInterpretor());
+        STARDARD_EXPR_INTERPRETOR_MAP.put(DateExpr.class, new DateExprInterpretor());
+        STARDARD_EXPR_INTERPRETOR_MAP.put(ValueExpr.class, new ValueExprInterpretor());
+        STARDARD_EXPR_INTERPRETOR_MAP.put(LastDayOfXMonthExpr.class, new LastDayOfXMonthExprInterpretor());
+        STARDARD_EXPR_INTERPRETOR_MAP.put(XDayOfWeekXInMonthXExpr.class, new XDayOfWeekXInMonthXExprInterpretor());
+        STARDARD_EXPR_INTERPRETOR_MAP.put(LastXDayOfWeekXInMonthXExpr.class, new LastXDayOfWeekXInMonthXExprInterpretor());
+        STARDARD_EXPR_INTERPRETOR_MAP.put(XDayOfWeekXInYearExpr.class, new XDayOfWeekXInYearExprInterpretor());
         //
-        BUILT_IN_FUNC_EXPR_INTERPRETOR_CACHE.put(AddOnFuncExpr.class, new AddOnFuncExprInterpretor(isAdminMode));
-        BUILT_IN_FUNC_EXPR_INTERPRETOR_CACHE.put(CustomFuncExpr.class, new CustomFuncExprInterpretor(this, isAdminMode));
+        BUILT_IN_FUNC_EXPR_INTERPRETOR_MAP.put(AddOnFuncExpr.class, new AddOnFuncExprInterpretor(isAdminMode));
+        BUILT_IN_FUNC_EXPR_INTERPRETOR_MAP.put(CustomFuncExpr.class, new CustomFuncExprInterpretor(this, isAdminMode));
         //
-        ALL_EXPR_INTERPRETOR_CACHE.put(DayRuleExpr.class, dayRuleExprInterpretor);
-        ALL_EXPR_INTERPRETOR_CACHE.putAll(STARDARD_EXPR_INTERPRETOR_CACHE);
-        ALL_EXPR_INTERPRETOR_CACHE.putAll(BUILT_IN_FUNC_EXPR_INTERPRETOR_CACHE);
+        ALL_EXPR_INTERPRETOR_MAP.put(DayRuleExpr.class, dayRuleExprInterpretor);
+        ALL_EXPR_INTERPRETOR_MAP.putAll(STARDARD_EXPR_INTERPRETOR_MAP);
+        ALL_EXPR_INTERPRETOR_MAP.putAll(BUILT_IN_FUNC_EXPR_INTERPRETOR_MAP);
 
         //
 
@@ -104,18 +110,18 @@ public class ExprEngine {
 
     public Collection<ExprInterpretor> getAllParameterizedExprInterpretors() {
         if (allParameterizedExprInterpretors.size() == 0) {
-            allParameterizedExprInterpretors.addAll(STARDARD_EXPR_INTERPRETOR_CACHE.values());
-            allParameterizedExprInterpretors.addAll(BUILT_IN_FUNC_EXPR_INTERPRETOR_CACHE.values());
-            allParameterizedExprInterpretors.addAll(EXTERNAL_FUNC_EXPR_INTERPRETOR_CACHE.values());
+            allParameterizedExprInterpretors.addAll(STARDARD_EXPR_INTERPRETOR_MAP.values());
+            allParameterizedExprInterpretors.addAll(BUILT_IN_FUNC_EXPR_INTERPRETOR_MAP.values());
+            allParameterizedExprInterpretors.addAll(EXTERNAL_FUNC_EXPR_INTERPRETOR_MAP.values());
         }
         return allParameterizedExprInterpretors;
     }
 
     public Collection<ExprInterpretor> getAllExprInterpretors() {
         if (allExprInterpretors.size() == 0) {
-            allExprInterpretors.addAll(STARDARD_EXPR_INTERPRETOR_CACHE.values());
-            allExprInterpretors.addAll(BUILT_IN_FUNC_EXPR_INTERPRETOR_CACHE.values());
-            allExprInterpretors.addAll(EXTERNAL_FUNC_EXPR_INTERPRETOR_CACHE.values());
+            allExprInterpretors.addAll(STARDARD_EXPR_INTERPRETOR_MAP.values());
+            allExprInterpretors.addAll(BUILT_IN_FUNC_EXPR_INTERPRETOR_MAP.values());
+            allExprInterpretors.addAll(EXTERNAL_FUNC_EXPR_INTERPRETOR_MAP.values());
             allExprInterpretors.add(logicExprInterpretor);
             allExprInterpretors.add(ymdValueExprInterpretor);
         }
@@ -124,16 +130,16 @@ public class ExprEngine {
 
 
     public <T extends Expr> void registerExternalFuncExpr(Class<T> clazz, ExprInterpretor<T> exprInterpretor) {
-        EXTERNAL_FUNC_EXPR_INTERPRETOR_CACHE.put(clazz, exprInterpretor);
+        EXTERNAL_FUNC_EXPR_INTERPRETOR_MAP.put(clazz, exprInterpretor);
     }
 
     public <T extends Expr> ExprInterpretor<T> getExprHandler(Class<T> clazz) {
-        ExprInterpretor<T> interpretor = STARDARD_EXPR_INTERPRETOR_CACHE.get(clazz);
+        ExprInterpretor<T> interpretor = STARDARD_EXPR_INTERPRETOR_MAP.get(clazz);
         if (interpretor == null) {
-            interpretor = BUILT_IN_FUNC_EXPR_INTERPRETOR_CACHE.get(clazz);
+            interpretor = BUILT_IN_FUNC_EXPR_INTERPRETOR_MAP.get(clazz);
         }
         if (interpretor == null) {
-            interpretor = EXTERNAL_FUNC_EXPR_INTERPRETOR_CACHE.get(clazz);
+            interpretor = EXTERNAL_FUNC_EXPR_INTERPRETOR_MAP.get(clazz);
         }
         if (interpretor == null) {
             if (clazz == LogicExpr.class) {
@@ -163,7 +169,7 @@ public class ExprEngine {
 
         LocalDate current = from;
         while (CommonUtil.countDaysSinceEpoch(current) <= CommonUtil.countDaysSinceEpoch(to)) {
-            String boolExpr = ALL_EXPR_INTERPRETOR_CACHE.get(dayRuleExpr.getClass()).calculateExpr(dayRuleExpr, current);
+            String boolExpr = ALL_EXPR_INTERPRETOR_MAP.get(dayRuleExpr.getClass()).calculateExpr(dayRuleExpr, current);
             if (evalBooleanFormula(boolExpr, expression)) {
                 ruleDays.add(current);
             }
@@ -183,7 +189,7 @@ public class ExprEngine {
 
         LocalDate current = from;
         while (CommonUtil.countDaysSinceEpoch(current) <= CommonUtil.countDaysSinceEpoch(to)) {
-            String boolExpr = ALL_EXPR_INTERPRETOR_CACHE.get(dayRuleExpr.getClass()).calculateExpr(dayRuleExpr, current);
+            String boolExpr = ALL_EXPR_INTERPRETOR_MAP.get(dayRuleExpr.getClass()).calculateExpr(dayRuleExpr, current);
             if (evalBooleanFormula(boolExpr, expression)) {
                 firstMatched = current;
                 break;
@@ -201,10 +207,23 @@ public class ExprEngine {
 
     public DayRuleExpr genDayRuleExpr(String expression) {
         String key = KeySmith.makeKey(expression);
-        DayRuleExpr expr = DAY_RULE_EXPR_OBJ_CACHE.get(key);
+
+        DayRuleExpr expr = null;
+
+        long stamp = LOCKER_DAY_RULE_EXPR_OBJ_CACHE.readLock();
+        try {
+            expr = DAY_RULE_EXPR_OBJ_CACHE.get(key);
+        }finally {
+            LOCKER_DAY_RULE_EXPR_OBJ_CACHE.unlockRead(stamp);
+        }
         if (expr == null) {
             expr = dayRuleExprInterpretor.parse(expression);
-            DAY_RULE_EXPR_OBJ_CACHE.put(key, expr);
+            stamp = LOCKER_DAY_RULE_EXPR_OBJ_CACHE.writeLock();
+            try {
+                DAY_RULE_EXPR_OBJ_CACHE.put(key, expr);
+            }finally{
+                LOCKER_DAY_RULE_EXPR_OBJ_CACHE.unlockWrite(stamp);
+            }
         }
         return expr;
     }
@@ -213,7 +232,12 @@ public class ExprEngine {
     public boolean evalBooleanFormula(String expr, String sourceMsg) {
         Boolean val = null;
         if (!isAdminMode) {
-            val = EVAL_RESULT_CACHE.get(expr);
+            long stamp = LOCKER_EVAL_RESULT_CACHE.readLock();
+            try {
+                val = EVAL_RESULT_CACHE.get(expr);
+            }finally {
+                LOCKER_EVAL_RESULT_CACHE.unlockRead(stamp);
+            }
         }
 
         if (val != null) {
@@ -226,7 +250,12 @@ public class ExprEngine {
 
             Boolean ret = (Boolean) scriptEngine.eval(expr);
             if (!isAdminMode) {
-                EVAL_RESULT_CACHE.put(expr, ret);
+                long stamp = LOCKER_EVAL_RESULT_CACHE.writeLock();
+                try {
+                    EVAL_RESULT_CACHE.put(expr, ret);
+                }finally {
+                    LOCKER_EVAL_RESULT_CACHE.unlockWrite(stamp);
+                }
             }
             return ret;
         } catch (ScriptException | RuntimeException sEx) {
@@ -251,7 +280,12 @@ public class ExprEngine {
     public String evaluateFunction(CustomFuncExpr expr, int year, String functionName) {
         String val = null;
         if (!isAdminMode) {
-            val = FUNC_EVAL_RESULT_CACHE.get(expr.getId());
+            long stamp =  LOCKER_FUNC_EVAL_RESULT_CACHE.readLock();
+            try {
+                val = FUNC_EVAL_RESULT_CACHE.get(expr.getId());
+            }finally {
+                LOCKER_FUNC_EVAL_RESULT_CACHE.unlockRead(stamp);
+            }
         }
         if (val != null) {
             return val;
@@ -263,7 +297,12 @@ public class ExprEngine {
             Object result = invocableEngine.invokeFunction(functionName, year);
             String ret = result != null ? result.toString() : null;
             if (!isAdminMode) {
-                FUNC_EVAL_RESULT_CACHE.put(expr.getId(), ret);
+                long stamp =  LOCKER_FUNC_EVAL_RESULT_CACHE.writeLock();
+                try {
+                    FUNC_EVAL_RESULT_CACHE.put(expr.getId(), ret);
+                }finally {
+                    LOCKER_FUNC_EVAL_RESULT_CACHE.unlockWrite(stamp);
+                }
             }
             return ret;
         } catch (ScriptException | RuntimeException | NoSuchMethodException sEx) {
@@ -281,11 +320,23 @@ public class ExprEngine {
 
     public Integer toDayOfWeek(String dateExprText) {
         String key = KeySmith.makeKey(dateExprText);
-        DateExpr dateExpr = DATE_EXPR_OBJ_CACHE.get(key);
+        DateExpr dateExpr = null;
+        long stamp = LOCKER_DATE_EXPR_OBJ_CACHE.readLock();
+        try {
+            dateExpr = DATE_EXPR_OBJ_CACHE.get(key);
+        }finally{
+            LOCKER_DATE_EXPR_OBJ_CACHE.unlockRead(stamp);
+        }
+
         if (dateExpr == null) {
-            DateExprInterpretor exprHandler = (DateExprInterpretor) STARDARD_EXPR_INTERPRETOR_CACHE.get(DateExpr.class);
+            DateExprInterpretor exprHandler = (DateExprInterpretor) STARDARD_EXPR_INTERPRETOR_MAP.get(DateExpr.class);
             dateExpr = exprHandler.parse(dateExprText);
-            DATE_EXPR_OBJ_CACHE.put(key, dateExpr);
+            stamp = LOCKER_DATE_EXPR_OBJ_CACHE.writeLock();
+            try {
+                DATE_EXPR_OBJ_CACHE.put(key, dateExpr);
+            }finally{
+                LOCKER_DATE_EXPR_OBJ_CACHE.unlockWrite(stamp);
+            }
         }
         return dateExpr.getDayOfWeek();
     }
